@@ -23,6 +23,7 @@ body {
     position: relative;
     margin: 20px auto;
     border-radius: 10px;
+    overflow: auto; /* Allows scrolling if content overflows */
 }
 
 .container {
@@ -43,7 +44,9 @@ body {
   }
 
 .header {
-    position: relative; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
     /* background-image: url('assets/bright.jpg');*/
     background-color: rgb(14, 14, 14);
     background-position: center; /* Centers the image */
@@ -110,8 +113,13 @@ body {
     color: white;
 }
 .location {
-    font-size: 20px;
+    font-size: 18px;
     color: white;
+    padding: 10px;
+    /* background-color: rgba(139, 125, 105, 0.5); Sepia toned with 50% transparency */
+    background-color: rgba(105, 139, 125, 0.5); /* Blue toned with 50% transparency */
+    border-radius: 10px; /* Make the box rounded */
+    margin-bottom: 5px;
 }
 
 .degree {
@@ -124,6 +132,8 @@ body {
     color: white
 }
 
+
+
 .forecast {
     margin: 50px auto;
     width: 80%;
@@ -135,6 +145,10 @@ body {
     justify-content: center;
     color: #3a132f;
     padding: 4px; /* Add padding */
+    background-color: rgba(139, 125, 105, 0.5); 
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 0;
+
 }
 
 .forecast-header {
@@ -174,6 +188,9 @@ body {
 }
 
 .forecast td {
+    padding: 5px; /* Reduce padding */
+    border: none;
+    color: white;
     position: relative;
 }
 
@@ -181,9 +198,10 @@ body {
     width: 30px;
     height: 30px;
     position: relative;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
+    /* bottom: 5px;
+    left: 50%; */
+    /* transform: translateX(-50%); */
+    margin-bottom: 5px;
 }
 
 .arrow-icon {
@@ -191,3 +209,37 @@ body {
     width: 20px; /* Adjust size as needed */
     height: 20px;
 }
+
+/* .graph-container{
+    margin: 50px auto;
+    width: 80%;
+    /* height: 150px; */
+    /* border-radius: 10px; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* color: #3a132f; */
+    /* padding: 4px; /* Add padding */
+    /* background-color: rgba(139, 125, 105, 0.5);  */
+    /* margin-top: 0; Remove any top margin */
+    /* padding-top: 0; */
+    /* position: relative;  */
+    /* height: 200px; */
+/* }  */ 
+
+.graph-container {
+    margin: 50px auto;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #3a132f;
+    padding: 4px; /* Add padding */
+    background-color: rgba(139, 125, 105, 0.5); 
+    position: relative; /* Ensure positioning for child elements */
+    height: 200px; /* Set a height for the graph */
+}
+

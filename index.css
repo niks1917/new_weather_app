@@ -102,11 +102,16 @@ body {
     align-items: center;
     justify-content: center;
     color: #3a132f;
+    padding: 40px; /* Add padding */
 }
 
-.temperature {
+.temperature  {
     font-size: 150px;
-    color: white
+    color: white;
+}
+.location {
+    font-size: 20px;
+    color: white;
 }
 
 .degree {
@@ -117,4 +122,72 @@ body {
 .feels-like {
     font-size: 9px;
     color: white
+}
+
+.forecast {
+    margin: 50px auto;
+    width: 80%;
+    /* height: 150px; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #3a132f;
+    padding: 4px; /* Add padding */
+}
+
+.forecast-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.forecast-table-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.forecast table {
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.forecast th {
+    background-color: transparent;
+    font-size: 1.2em; /* Increase font size */
+    color: white;
+    border-bottom: 2px ; /* Add a line under each date */
+    font-weight: 400;
+}
+
+
+.forecast td {
+    padding: 10px;
+    border: none; /* Removed border lines */
+    color: white
+}
+
+.forecast td {
+    position: relative;
+}
+
+.forecast td img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow-icon {
+    margin-left: auto; /* Aligns the icon to the right */
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
 }

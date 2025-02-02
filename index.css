@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 100;
+    background-color: #f0f0f0;
+}
+
+.audio_icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.background-container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Slightly smaller than the viewport width */
+    height: 100vh; /* Slightly smaller than the viewport height */
+    background-image: url('assets/clear.jpg'); /* Added image link */
+    background-size: cover; /* Ensures the image covers the container */
+    position: relative;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #333;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.background-tint {
+    background-color: rgba(200,100,0,.5);
+    /* background-color: rgba(211, 147, 83, 0.5); */
+    background-blend-mode: multiply;
+  }
+
+.header {
+    position: relative; 
+    /* background-image: url('assets/bright.jpg');*/
+    background-color: rgb(14, 14, 14);
+    background-position: center; /* Centers the image */
+    background-size: cover; 
+    color: #efefe4;
+    padding: 10px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Adjust width as needed */
+    height: 60px; /* Adjust height as needed */
+    margin: 10px 0; /* Space between items */
+    background-color: #a8a9b3; /* Consistent background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    height: 90px;
+}
+
+.sidebar-item:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.sidebar-item img {
+    max-width: 90%; /* Ensure icons fit well */
+    max-height: 90%;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 7.5%;
+    width: 10%;
+    height: 100%;
+}
+
+.content {
+    margin: 50px auto;
+    /* background-color: #080808; */
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #3a132f;
+}
+
+.temperature {
+    font-size: 150px;
+    color: white
+}
+
+.degree {
+    font-size: 0.1 em; /* Adjust the size as needed */
+    vertical-align: super; /* Aligns the degree sign */
+}
+
+.feels-like {
+    font-size: 9px;
+    color: white
+}

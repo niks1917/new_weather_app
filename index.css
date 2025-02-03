@@ -161,7 +161,7 @@ body {
 .forecast-table-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 }
 
@@ -180,29 +180,22 @@ body {
     font-weight: 400;
 }
 
-
-.forecast td {
-    padding: 10px;
-    border: none; /* Removed border lines */
-    color: white
-}
-
 .forecast td {
     padding: 5px; /* Reduce padding */
     border: none;
     color: white;
     position: relative;
+    font-size: larger;
 }
 
 .forecast td img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     position: relative;
-    /* bottom: 5px;
-    left: 50%; */
-    /* transform: translateX(-50%); */
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
+
 
 .arrow-icon {
     margin-left: auto; /* Aligns the icon to the right */
@@ -210,36 +203,62 @@ body {
     height: 20px;
 }
 
-/* .graph-container{
-    margin: 50px auto;
-    width: 80%;
-    /* height: 150px; */
-    /* border-radius: 10px; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* color: #3a132f; */
-    /* padding: 4px; /* Add padding */
-    /* background-color: rgba(139, 125, 105, 0.5);  */
-    /* margin-top: 0; Remove any top margin */
-    /* padding-top: 0; */
-    /* position: relative;  */
-    /* height: 200px; */
-/* }  */ 
-
 .graph-container {
-    margin: 50px auto;
+    margin: 20px auto;
     width: 80%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: #3a132f;
+    justify-content: flex-start;
     padding: 4px; /* Add padding */
     background-color: rgba(139, 125, 105, 0.5); 
     position: relative; /* Ensure positioning for child elements */
-    height: 200px; /* Set a height for the graph */
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 0;
+    padding-bottom: 300;
+    min-height: 300px;
 }
 
+canvas {
+    max-width: 100%; /* Ensure the canvas is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.icon-container {
+    display: flex;
+    justify-content: center; /* Center align the icons */
+    position: relative; 
+    top: 10px; /* Adjust this value based on your graph height */
+    left: 50%; /* Center align horizontally */
+    width: 100%; /* Full width to match the graph */
+    padding-top: 0px; /* Add padding above */
+    transform: translateX(-50%); /* Center align horizontally */
+    margin-top: 0;
+    margin-bottom: 30;
+}
+
+.icon {
+    width: 25px; /* Reduce icon size */
+    height: 25px; /* Reduce icon size */
+    display: block; /* Ensure icons are block elements */
+    margin: 0 auto; /* Center icons */
+}
+
+.temps_ranges {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between temperature values */
+    margin-top: 30px; /* Adds space below icons */
+    color: white;
+    font-size: 30px;
+    width: 90%; /* Increase width for more spacing */
+    max-width: 500px; /* Prevent excessive width */
+}
+
+.temps_ranges span {
+    flex: 1; /* Forces equal width for each item */
+    text-align: center; /* Centers the text inside each flex item */
+    /* background-color: #3a132f; */
+}

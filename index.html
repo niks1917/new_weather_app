@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   
@@ -51,11 +52,11 @@
             <th>22</th>
         </tr>
         <tr>
-            <th style="font-size: 90%">Today</th>
-            <th style="font-size: 90%">Mon</th>
-            <th style="font-size: 90%">Tue</th>
-            <th style="font-size: 90%">Wed</th>
-            <th style="font-size: 90%">Thu</th>
+            <th style="font-size: 90%; color: #caced9;">Today</th>
+            <th style="font-size: 90%; color: #caced9;">Mon</th>
+            <th style="font-size: 90%; color: #caced9;">Tue</th>
+            <th style="font-size: 90%; color: #caced9;">Wed</th>
+            <th style="font-size: 90%; color: #caced9;">Thu</th>
         </tr>
         <tr>
             <td style="padding-top: 10px;"><img src="assets/scarf.png" alt="Icon 1"></td>
@@ -75,15 +76,66 @@
     <img src="assets/arrow-37-16.png" alt="Arrow Icon" class="arrow-icon">    
 </div>
 </div>
-<div class = "graph-container">
-    
+<div class="graph-container">
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <div class="icon-container">
+        <img src="assets/moon_outline.png" class="icon" alt="Icon 1">
+        <img src="assets/sun.png" class="icon" alt="Icon 3">
+        <img src="assets/moon_outline.png" class="icon" alt="Icon 4">
+    </div>
+    <div class="temps_ranges">
+        <span class="temp">-8°</span>
+        <span class="temp">-1°</span>
+        <span class="temp">-3°</span>
+    </div>
 </div>
         
-   
-
-   
-
 
     </div>
+
+<!-- graph js -->
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['12am', '6am', '5:15pm', '11:59pm'],
+                datasets: [{
+                    label: '',
+                    data: [-8, 2, 7, -3],
+                    borderColor: 'black',
+                    borderWidth: 1,
+                    backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                plugins: {
+                legend: {
+                    display: false // Hide the legend completely
+                    }
+                },
+                scales: {
+                    y: {
+                        display: false, // Hide the y-axis
+                        beginAtZero: true,
+                        min: -10,
+                        max: 10
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white', // Set the x-axis tick color to white
+                            font: {
+                                size: 14, // Increase the font size of x axis labels
+                                family: "'Quicksand', sans-serif" // Set the font family to 'Quicksand', sans-serif
+                            }
+                        }
+                }
+            }
+            }
+        });
+    </script>
+
 </body>
 </html>

@@ -47,8 +47,7 @@ body {
     position: sticky; 
     top: 0;
     z-index: 1000; /* Ensure it stays above other content */
-    /* background-image: url('assets/bright.jpg');*/
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(0, 0, 0);
     background-position: center; /* Centers the image */
     background-size: cover; 
     color: #efefe4;
@@ -60,14 +59,57 @@ body {
     border-top-right-radius: 10px;
 }
 
+.sidebar {
+    /* display: fixed;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 7.5%;
+    width: 10%;
+    height: 100%; */
+
+    /* position: absolute;
+    position: fixed; 
+    top: 60px; 
+    left: 0;
+    width: 50px; 
+    top: 10px;
+    height: calc(100vh - 60px); 
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    z-index: 999;
+    overflow-y: auto;
+    padding-top: 10px;  */
+
+    position: fixed; /* Keeps it fixed on the left */
+    top: 50px; /* Ensures it starts below the header */
+    width: 50px; /* Adjust width as needed */
+    height: calc(100vh - 60px); /* Prevents overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    z-index: 999;
+    overflow-y: auto;
+    padding-top: 10px; /* Extra space to keep icons from touching the header */
+
+}
+
+
+.content, .forecast, .graph-container {
+    margin-left: 80px; /* Adjust to leave space for sidebar */
+}
+
 .sidebar-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px; /* Adjust width as needed */
+    width: 25px; /* Adjust width as needed */
     height: 60px; /* Adjust height as needed */
     margin: 10px 0; /* Space between items */
-    background-color: #a8a9b3; /* Consistent background color */
+    background-color: #a2baa8; 
+    /* background-color: #99a69c;  */
+    /* background-color: rgba(168, 169, 179, 0.6); 60% opacity */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
@@ -75,7 +117,7 @@ body {
 }
 
 .sidebar-item:hover {
-    background-color: #e0e0e0; /* Slightly darker on hover */
+    background-color: #666b78; /* Slightly darker on hover */
     transform: translateY(-2px); /* Lift effect on hover */
 }
 
@@ -84,15 +126,7 @@ body {
     max-height: 90%;
 }
 
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 0;
-    top: 7.5%;
-    width: 10%;
-    height: 100%;
-}
+
 
 .content {
     margin: 50px auto;
